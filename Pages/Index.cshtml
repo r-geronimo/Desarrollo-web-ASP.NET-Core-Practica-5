@@ -1,0 +1,86 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Práctica V</h1>
+    <div class="row">
+        <div class="col-lg-12 mt-3">
+            <h3>Productos por una categoría en especifico</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Categoria Id</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model.ejercio1 is not null)
+                        @foreach (var item in Model.ejercio1)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.CategoriaId</td>
+                                <td>@item.Marca</td>
+                                <td>@item.Modelo</td>
+                                <td>@item.Precio</td>
+                            </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-12 mt-3">
+            <h3>Los productos con precios mayores de 3,000 pesos pero menores de 5000 pesos, ordenados descendente mente</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Categoria Id</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ejercio2)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.CategoriaId</td>
+                            <td>@item.Marca</td>
+                            <td>@item.Modelo</td>
+                            <td>@item.Precio</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-12 mt-3">
+            <h3>Los nombres de las categorías de los productos registrados (usar join)</h3>
+            <table class="table">
+                <thead  class="thead-dark">
+                    <tr>
+                        <th>Nombre Categoria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ejercio3)
+                    {
+                        <tr>
+                            <td>@item</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
